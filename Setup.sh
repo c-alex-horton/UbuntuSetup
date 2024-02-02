@@ -26,7 +26,7 @@ cd ..
 rm -rf neovim/
 
 echo creating config if it does not exist
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/
 
 echo getting NeoVim config
 git clone https://github.com/ntk148v/neovim-config.git
