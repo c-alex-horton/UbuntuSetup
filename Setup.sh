@@ -8,6 +8,11 @@ echo updating...
 apt update
 echo installing the must-have pre-requisites
 while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
+        ninja-build
+        gettext
+        cmake
+        unzip
+        curl
         tree
 EOF
 )
@@ -17,16 +22,10 @@ sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake c
 git clone https://github.com/neovim/neovim.git
 cd neovim
 make CMAKE_BUILD_TYPE=RelWithDebInfo
+echo INSTALLING NEOVIM...
+sudo make install
 cd ..
 rm -rf neovim/
-sudo make install
-
-echo installing the nice-to-have pre-requisites
-echo you have 5 seconds to proceed ...
-echo or
-echo hit Ctrl+C to quit
-echo -e "\n"
-sleep 6
 
 echo creating config if it does not exist
 mkdir -p ~/.config/
@@ -38,3 +37,4 @@ cd neovim-config/
 cp -Rv nvim $USRHOME/.config/
 cd ..
 rm -rf neovim-config/
+echo Done
