@@ -16,6 +16,7 @@ while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
         unzip
         curl
         tree
+	neofetch
 EOF
 )
 
@@ -32,4 +33,9 @@ mkdir -p $USRHOME/.config/nvim/
 
 echo getting NeoVim config
 git clone https://github.com/c-alex-horton/kickstart.nvim.git $USRHOME/.config/nvim/
-echo Done
+
+sudo chown -R $USER $USRHOME/
+
+neofetch
+
+
