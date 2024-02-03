@@ -28,13 +28,8 @@ cd ..
 rm -rf neovim/
 
 echo creating config if it does not exist
-mkdir -p $USRHOME/.config/
+mkdir -p $USRHOME/.config/nvim/
 
 echo getting NeoVim config
-git clone https://github.com/ntk148v/neovim-config.git
-echo ol switcheroo
-cd neovim-config/
-cp -Rv nvim $USRHOME/.config/
-cd ..
-rm -rf neovim-config/
+git clone https://github.com/c-alex-horton/kickstart.nvim.git $USRHOME/.config/nvim/
 echo Done
