@@ -27,8 +27,9 @@ EOF
 echo INSTALLING NVM...
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
-echo SOURCING BASH WITH DOT...
-.  $USRHOME/.bashrc  
+echo Trying stupid SO fix...
+export NVM_DIR=$HOME/.nvm;
+source $NVM_DIR/nvm.sh;
 
 echo INSTALLING NODE
 nvm install node
