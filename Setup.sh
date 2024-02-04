@@ -43,14 +43,13 @@ cd ..
 rm -rf neovim/
 
 echo creating config if it does not exist
-sudo mkdir -p $USRHOME/.config/nvim/
+mkdir -p ~/.config/nvim/
 
 echo getting NeoVim config
-git clone https://github.com/c-alex-horton/calex-nvim-config.git  $USRHOME/.config/nvim/
+git clone https://github.com/c-alex-horton/calex-nvim-config.git  ~/.config/nvim/
 
 sudo chown -R $USER $USRHOME/
 
-sudo chown -R $USER $USRHOME/
 neofetch
 
 
