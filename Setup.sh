@@ -9,16 +9,22 @@ apt update
 echo installing the must-have pre-requisites
 while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
         ninja-build
-	fd-find
-	ripgrep
+      	fd-find
+      	ripgrep
         gettext
         cmake
         unzip
         curl
         tree
-	neofetch
+      	neofetch
+        golang-go
+        luarocks
 EOF
 )
+
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+
 
 git clone https://github.com/neovim/neovim.git
 cd neovim
