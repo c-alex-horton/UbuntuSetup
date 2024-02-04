@@ -25,7 +25,7 @@ EOF
 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
-source ~/.bashrc  
+source /home/$USRHOME/.bashrc  
 
 nvm install node
 
