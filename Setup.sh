@@ -2,6 +2,7 @@
 USRHOME="$(getent passwd $SUDO_USER | cut -d: -f6)"
 set -eu -o pipefail # fail on error and report it, debug all lines
 
+echo $USRHOME
 # sudo -n true
 # test $? -eq 0 || exit 1 "you should have sudo privilege to run this script"
 # echo updating...
@@ -25,7 +26,7 @@ EOF
 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
-source /home/$USRHOME/.bashrc  
+source $USRHOME/.bashrc  
 
 nvm install node
 
