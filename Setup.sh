@@ -48,7 +48,6 @@ mkdir -p ~/.config/nvim/
 echo getting NeoVim config
 git clone https://github.com/c-alex-horton/calex-nvim-config.git  ~/.config/nvim/
 
-sudo chown -R $USER $USRHOME/
 
 neofetch
 
