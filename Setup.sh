@@ -3,8 +3,8 @@ USRHOME="$(getent passwd $SUDO_USER | cut -d: -f6)"
 set -eu -o pipefail # fail on error and report it, debug all lines
 
 echo $USRHOME
- sudo -n true
- test $? -eq 0 || exit 1 "you should have sudo privilege to run this script"
+# sudo -n true
+# test $? -eq 0 || exit 1 "you should have sudo privilege to run this script"
 # echo updating...
 # apt update
 echo installing the must-have pre-requisites
@@ -43,13 +43,14 @@ cd ..
 rm -rf neovim/
 
 echo creating config if it does not exist
-mkdir -p $USRHOME/.config/nvim/
+sudo mkdir -p $USRHOME/.config/nvim/
 
 echo getting NeoVim config
 git clone https://github.com/c-alex-horton/calex-nvim-config.git  $USRHOME/.config/nvim/
 
 sudo chown -R $USER $USRHOME/
 
+sudo chown -R $USER $USRHOME/
 neofetch
 
 
