@@ -24,10 +24,13 @@ while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
 EOF
 )
 
+echo INSTALLING NVM...
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
-source $USRHOME/.bashrc  
+echo SOURCING BASH
+sudo source $USRHOME/.bashrc  
 
+echo INSTALLING NODE
 nvm install node
 
 git clone https://github.com/neovim/neovim.git
