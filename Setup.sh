@@ -32,7 +32,9 @@ export NVM_DIR=$HOME/.nvm;
 source $NVM_DIR/nvm.sh;
 
 echo INSTALLING NODE
-nvm install node
+nvm i 20
+
+sudo npm i -g typescript
 
 git clone https://github.com/neovim/neovim.git
 cd neovim
